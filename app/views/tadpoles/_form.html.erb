@@ -1,0 +1,17 @@
+<%= form_for(@tadpole) do |f| %>
+  <% if @tadpole.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tadpole.errors.count, "error") %> prohibited this tadpole from being saved:</h2>
+
+      <ul>
+      <% @tadpole.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
